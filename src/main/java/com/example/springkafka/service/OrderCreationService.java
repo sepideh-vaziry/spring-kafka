@@ -1,8 +1,7 @@
 package com.example.springkafka.service;
 
-import com.example.springkafka.config.KafkaTopics;
+import com.example.springkafka.config.KafkaTopicsConstant;
 import com.example.springkafka.dto.Order;
-import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -19,7 +18,7 @@ public class OrderCreationService {
   public void create(Order order) {
     Message<Order> message = MessageBuilder
         .withPayload(order)
-        .setHeader(KafkaHeaders.TOPIC, KafkaTopics.TOPIC_ORDER)
+        .setHeader(KafkaHeaders.TOPIC, KafkaTopicsConstant.TOPIC_ORDER)
         .build();
 
     kafkaTemplate.send(message);
