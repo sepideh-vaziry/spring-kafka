@@ -12,7 +12,7 @@ public class KafkaTopicConfig {
   @Bean
   public NewTopic orderTopic() {
     return TopicBuilder
-        .name(KafkaTopics.TOPIC_ORDER)
+        .name(KafkaTopicsConstant.TOPIC_ORDER)
         .build();
   }
 
