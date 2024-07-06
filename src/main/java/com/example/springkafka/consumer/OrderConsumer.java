@@ -36,7 +36,7 @@ public class OrderConsumer {
   }
 
   @DltHandler
-  public void dlOrderHandler(Order order, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
+  public void dlOrderHandler(Order order) {
     log.info("The order is consumed by dead-letter topic. The order is: {}", order.toString());
   }
 
