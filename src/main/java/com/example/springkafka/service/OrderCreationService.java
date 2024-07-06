@@ -18,7 +18,7 @@ public class OrderCreationService {
   public void create(Order order) {
     Message<Order> message = MessageBuilder
         .withPayload(order)
-        .setHeader(KafkaHeaders.TOPIC, KafkaTopicsConstant.TOPIC_ORDER)
+        .setHeader(KafkaHeaders.TOPIC, KafkaTopicsConstant.ORDER_TOPIC)
         .build();
 
     kafkaTemplate.send(message);

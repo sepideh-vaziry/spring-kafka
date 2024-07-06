@@ -3,12 +3,13 @@
 This project is a simple Spring Boot application integrated with Apache Kafka. 
 It demonstrates how to use Kafka for messaging in a Spring Boot application.
 
-![Alt text](https://github.com/sepideh-vaziry/spring-kafka/blob/main/kafka-fundamentals.jpg?raw=true)
+![Alt text](https://github.com/sepideh-vaziry/spring-kafka/blob/main/files/kafka.webp?raw=true)
 
 ## Features
 
 - Spring Boot for application development
 - Apache Kafka for message brokering
+- Dead Letter Queue for Kafka
 - RESTful endpoints for producing and consuming messages
 
 ## Prerequisites
@@ -44,4 +45,5 @@ It demonstrates how to use Kafka for messaging in a Spring Boot application.
 4. Consuming Message.
    Messages will be consumed automatically by the Kafka listener configured in the application. 
    You can check the logs to see the consumed messages.
+   If the count of product is more than 10 the order published to the dead letter topic.
 
